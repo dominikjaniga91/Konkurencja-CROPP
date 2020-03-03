@@ -1,6 +1,5 @@
 package controller;
 
-import util.Database;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -46,7 +45,6 @@ public class LoginController extends HttpServlet {
 
         if(login.equals(ADMIN_LOGIN) && password.equals(ADMIN_PASSWORD)){
 
-            Database.addToHistory("logowanie");
             RequestDispatcher dispatcher = request.getRequestDispatcher("upload.jsp");
             dispatcher.forward(request, response);
 

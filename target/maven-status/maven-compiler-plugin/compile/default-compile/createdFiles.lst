@@ -1,0 +1,15 @@
+model\otherBrands\Terranova.class
+model\inditex\Bershka.class
+model\otherBrands\Hm.class
+model\inditex\AbstractInditex.class
+model\otherBrands\Befree.class
+model\inditex\InditexInterface.class
+model\otherBrands\Reserved.class
+service\Excel.class
+controller\FileController.class
+model\inditex\PullBear.class
+model\otherBrands\BrandsInterface.class
+service\Service.class
+controller\LoginController.class
+model\otherBrands\AbstractBrand.class
+model\otherBrands\House.class
