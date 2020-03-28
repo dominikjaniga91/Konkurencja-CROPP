@@ -1,6 +1,5 @@
 package model.inditex;
 
-
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.jsoup.nodes.Document;
 import org.jsoup.select.Elements;
@@ -19,7 +18,7 @@ public interface InditexInterface {
 
         for (Document htmlCodeFromURL : htmlCodeFromURLs) {
 
-            Elements namesAndPrices = htmlCodeFromURL.getElementsByClass(brand.getProductAndPriceClassName());
+            Elements namesAndPrices = htmlCodeFromURL.getElementsByAttribute(brand.getProductAndPriceClassName());
             Elements modeloColor = htmlCodeFromURL.getElementsByAttribute(brand.getModeloColorClassName());
             Elements countryData = htmlCodeFromURL.getElementsByAttributeValue(brand.getLangClass(), brand.getLangClassParam());
 

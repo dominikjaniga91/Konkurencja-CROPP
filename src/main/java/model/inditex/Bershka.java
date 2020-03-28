@@ -2,7 +2,7 @@ package model.inditex;
 
 public class Bershka extends AbstractInditex {
 
-    private String brandName = "pull&bershka";
+    private String brandName = "bershka";
     private String productAndPriceClassName = "href";
     private String modeloColorClassName = "alt";
     private String langClass = "http-equiv";

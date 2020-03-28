@@ -1,8 +1,8 @@
 package controller;
 
-import javax.servlet.RequestDispatcher;
-import javax.servlet.ServletException;
+import javax.servlet.*;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpFilter;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -14,6 +14,7 @@ public class LoginController extends HttpServlet {
     private static final long serialVersionUID = 1L;
     private final static String ADMIN_LOGIN = "croppcrew";
     private final static String ADMIN_PASSWORD = "kontrolerzy";
+
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)  {
@@ -59,7 +60,6 @@ public class LoginController extends HttpServlet {
     private void logOut(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
         if(request.getSession(false) != null){
-            System.out.println("log out");
             request.getSession().invalidate();
             response.sendRedirect("index.jsp");
         } else{
