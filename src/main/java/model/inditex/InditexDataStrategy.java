@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public interface InditexInterface {
+public interface InditexDataStrategy {
 
     Map<Integer, Object[]> data = new HashMap<>();
 

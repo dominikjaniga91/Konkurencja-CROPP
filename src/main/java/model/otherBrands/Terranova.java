@@ -1,6 +1,6 @@
 package model.otherBrands;
 
-public class Terranova extends AbstractBrand {
+public class Terranova extends OtherBrands {
 
     private String brandName = "terranova";
     private String productClassName = "product-item-link";

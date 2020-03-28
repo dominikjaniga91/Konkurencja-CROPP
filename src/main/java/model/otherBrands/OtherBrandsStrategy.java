@@ -8,12 +8,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public interface BrandsInterface {
+public interface OtherBrandsStrategy {
 
     Map<Integer, Object[]> data = new HashMap<>();
 
 
-    default XSSFWorkbook getDataFromHtml(List<Document> htmlCodeFromURLs, AbstractBrand brand ) {
+    default XSSFWorkbook getDataFromHtml(List<Document> htmlCodeFromURLs, OtherBrands brand ) {
 
         XSSFWorkbook xslxSpreadsheet = Excel.createNewXlsxFile(brand.getBrandName());
 

@@ -1,6 +1,6 @@
 package model.otherBrands;
 
-public class House extends AbstractBrand {
+public class House extends OtherBrands {
 
     String brandName = "house";
     String productClassName = "es-product-name";

@@ -1,6 +1,6 @@
 package model.otherBrands;
 
-public class Reserved extends AbstractBrand {
+public class Reserved extends OtherBrands {
 
     private String brandName = "reserved";
     private String productClassName = "es-product-name";

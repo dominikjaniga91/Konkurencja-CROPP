@@ -1,62 +1,46 @@
 package service;
 
-
 import model.inditex.*;
 import model.otherBrands.*;
-import org.apache.commons.fileupload.FileItem;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.util.ArrayList;
 import java.util.List;
-import model.otherBrands.BrandsInterface;
-import model.inditex.InditexInterface;
+import model.otherBrands.OtherBrandsStrategy;
+import model.inditex.InditexDataStrategy;
 
-public class Service implements BrandsInterface, InditexInterface {
+public class Service implements OtherBrandsStrategy, InditexDataStrategy {
 
     XSSFWorkbook xslxSpreadsheet;
-
     public XSSFWorkbook startAnalyzeBrand(String providedBrand, List<Document> htmlCodeFromURLs) throws Exception {
 
         switch (providedBrand){
 
             case "bershka": {
-                Bershka bershka = new Bershka();
-                xslxSpreadsheet = getDataFromHtml(htmlCodeFromURLs, bershka);
+                xslxSpreadsheet = getDataFromHtml(htmlCodeFromURLs, new Bershka());
                 break;
             }
             case "house": {
-                House house = new House();
-                xslxSpreadsheet = getDataFromHtml(htmlCodeFromURLs, house);
+                xslxSpreadsheet = getDataFromHtml(htmlCodeFromURLs, new House());
                 break;
             }
             case "reserved": {
-                Reserved reserved = new Reserved();
-                xslxSpreadsheet =  getDataFromHtml(htmlCodeFromURLs, reserved);
+                xslxSpreadsheet = getDataFromHtml(htmlCodeFromURLs, new Reserved());
                 break;
             }
             case "h&m": {
-                Hm hm = new Hm();
-                xslxSpreadsheet = getDataFromHtml(htmlCodeFromURLs, hm);
+                xslxSpreadsheet = getDataFromHtml(htmlCodeFromURLs, new Hm());
                 break;
             }
             case "pull&bear": {
-                PullBear pullBear = new PullBear();
-                xslxSpreadsheet = getDataFromHtml(htmlCodeFromURLs, pullBear);
+                xslxSpreadsheet = getDataFromHtml(htmlCodeFromURLs,  new PullBear());
                 break;
             }
             case "terranova": {
-                Terranova terranova = new Terranova();
-                xslxSpreadsheet = getDataFromHtml(htmlCodeFromURLs, terranova);
+                xslxSpreadsheet = getDataFromHtml(htmlCodeFromURLs, new Terranova());
                 break;
             }
             case "befree": {
-                Befree befree = new Befree();
-                xslxSpreadsheet = getDataFromHtml(htmlCodeFromURLs, befree);
+                xslxSpreadsheet = getDataFromHtml(htmlCodeFromURLs, new Befree());
                 break;
             }
             default:{
@@ -66,20 +50,5 @@ public class Service implements BrandsInterface, InditexInterface {
         return xslxSpreadsheet;
     }
 
-    public static List<Document> readingFile(FileItem item)  throws IOException {
 
-        List<Document> documentsArray = new ArrayList<>();
-        InputStream stream = item.getInputStream();
-        BufferedReader readFile = new BufferedReader(new InputStreamReader(stream));
-        String html;
-
-        while ((html = readFile.readLine()) != null) {
-            System.out.println(html);
-            Document documentHtml = Jsoup.connect(html).get();
-            documentsArray.add(documentHtml);
-        }
-        readFile.close();
-        stream.close();
-        return documentsArray;
-    }
 }

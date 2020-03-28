@@ -1,6 +1,8 @@
 package model.otherBrands;
 
-public abstract class AbstractBrand {
+import model.Brand;
+
+public abstract class OtherBrands extends Brand {
 
     public abstract String getBrandName();
 

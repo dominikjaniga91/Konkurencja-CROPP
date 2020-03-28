@@ -1,16 +1,7 @@
 package model.inditex;
 
-public abstract class AbstractInditex {
 
-    String brandName;
-    String productAndPriceClassName;
-    String modeloColorClassName;
-    int cutFrom;
-    int cutTo;
-    String langClass;
-    String langClassParam;
-    String modeloColorAttribute;
-    String countryAttribute;
+public abstract class AbstractInditex {
 
     public abstract String getBrandName();
 

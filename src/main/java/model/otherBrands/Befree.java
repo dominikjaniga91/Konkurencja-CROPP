@@ -1,6 +1,6 @@
 package model.otherBrands;
 
-public class Befree extends AbstractBrand{
+public class Befree extends OtherBrands {
 
     private String brandName = "befree";
     private String productClassName = "Item__Name-cev3xd-2 feAiUU";
